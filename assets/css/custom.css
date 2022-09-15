@@ -39,3 +39,19 @@ body{
     background: var(--tertiary);
     transform: scale(0.96);
 }
+
+.archive__list-item {
+    flex-wrap: wrap;
+}
+
+.mod_posts_list_content {
+    flex: none;
+    width: 100%;
+}
+
+.mod_posts_list_content > .post__footer {
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 14px;
+}

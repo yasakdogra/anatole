@@ -41,6 +41,13 @@
 
               {{ end }}
             </div>
+            <div class="mod_posts_list_content">
+              <div class="post__footer">
+                {{ with .Page.Params.Tags }}
+                  {{ partial "taxonomy/tags.html" . }}
+                {{ end }}
+              </div>
+            </div>
           </li>
         </ul>
 
