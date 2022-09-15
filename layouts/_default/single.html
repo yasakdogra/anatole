@@ -56,6 +56,23 @@
 
       {{ end }}
 
+      <div class="mod_post_taxonomy">
+      {{ with .Page.Params.Categories }}
+        {{ partial "taxonomy/categories.html" . }}
+        <br>
+      {{ end }}
+
+      {{ with .Page.Params.Series }}
+        {{ partial "taxonomy/series.html" . }}
+        <br>
+      {{ end }}      
+
+      {{ with .Page.Params.Tags }}
+        {{ partial "taxonomy/tags.html" . }}
+        <br>
+      {{ end }}
+      </div>
+
       {{- partial "expirationnote.html" . -}}
 
       {{- if (eq .Params.toc true) -}}
@@ -90,19 +107,6 @@
 
 
       {{- end -}}
-    </div>
-    <div class="post__footer">
-      {{ with .Page.Params.Categories }}
-        {{ partial "taxonomy/categories.html" . }}
-
-
-      {{ end }}
-
-      {{ with .Page.Params.Tags }}
-        {{ partial "taxonomy/tags.html" . }}
-
-
-      {{ end }}
     </div>
 
     {{ if and (or (eq .Type "post") (eq .Type .Site.Params.postSectionName)) (ne .Page.Params.disableComments true) }}
