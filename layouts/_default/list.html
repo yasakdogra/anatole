@@ -8,7 +8,7 @@
 
     {{ end }}"
   >
-    {{ range .Data.Pages.GroupByDate "2006" }}
+    {{ range .RegularPagesRecursive.GroupByDate "2006" }}
       <div class="archive__heading">{{ .Key }}</div>
       {{ range .Pages }}
         <ul class="archive__list">
