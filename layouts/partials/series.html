@@ -3,7 +3,7 @@
 
 <h3>{{ i18n "series_posts" }}</h3>
 <ul>
-  {{ range $related }}
+  {{ range $related.ByDate }}
     <li><a href="{{ .Page.RelPermalink }}">{{ title .Page.Title }}</a></li>
 
   {{ end }}
