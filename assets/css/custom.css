@@ -5,3 +5,14 @@ aside.wrapper__sidebar {
 main.wrapper__main {
     margin: auto;
 }
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__base {
+    display: unset;
+    margin-top: auto;
+}
