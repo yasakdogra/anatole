@@ -56,6 +56,14 @@ body{
     line-height: 14px;
 }
 
+.theme--light .mod_post_taxonomy a {
+    color: #9f9f9f;
+}
+
+.theme--dark .mod_post_taxonomy a {
+    color: #9f9f9f;
+}
+
 .series {
     display: inline-block;
     font-size: 1.4rem;
