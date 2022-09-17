@@ -69,3 +69,74 @@ body{
     font-size: 1.4rem;
     margin: 5px 8px 5px 0;
 }
+
+.nav__list--end>.nav__list-item {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#fastSearch { 
+    visibility: hidden;
+    max-width: 600px;
+    white-space: normal;
+    text-transform: none;
+    text-align: justify;
+    min-width: 22vw;
+    position: relative;
+}      
+
+#fastSearch input {
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: 400;
+    border-radius: 3px 3px 0 0;
+    border: none;
+    outline: none;
+    text-align: left;
+    display: inline-block;
+    background-color: #ebebeb;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#searchResults {
+    visibility: inherit;
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 0;
+    min-width: 22vw;
+}
+
+#searchResults li {
+    list-style: none;
+    background-color: #ebebeb;
+    margin-top: 2px;
+    width: 100%;
+}
+
+#searchResults a {
+    text-decoration: none!important;
+    padding: 10px 15px;
+    display: block;
+}
+
+#searchResults li .title { 
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.theme--dark #searchResults a {
+    background-color: #20313c;
+}
+
+#searchResults a:hover, a:focus { 
+    outline: 0; background-color: #9f9f9f; color: #fff; 
+}
+
+.theme--dark #searchResults a:hover, a:focus {
+    background-color: #324c5d;
+}
