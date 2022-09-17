@@ -84,9 +84,10 @@ function loadSearch() {
 
     var options = { // fuse.js options; check fuse.js website for details
       shouldSort: true,
+      ignoreLocation: true,
       location: 0,
-      distance: 100,
-      threshold: 0.4,
+      distance: 1000,
+      threshold: 0,
       minMatchCharLength: 2,
       keys: [
         'title',
