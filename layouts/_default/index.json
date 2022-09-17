@@ -1,5 +1,13 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range .Site.RegularPages -}}
-    {{- $.Scratch.Add "index" (dict "title" .Title "tags" .Params.tags "categories" .Params.categories "contents" .Plain "permalink" .Permalink) -}}
+    {{- $.Scratch.Add "index" (dict
+    "date" (dateFormat "Jan 2, 2006" .Date) 
+    "title" .Title 
+    "summary" .Summary 
+    "tags" .Params.tags 
+    "categories" .Params.categories 
+    "series" .Params.series 
+    "toc" (.TableOfContents | replaceRE `<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>|\\n` "" | replaceRE `\s+`  " ") 
+    "permalink" .Permalink) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
