@@ -14,24 +14,7 @@ document.addEventListener('keydown', function(event) {
 
   // CMD-/ to show / hide Search
   if (event.metaKey && event.which === 191) {
-      // Load json search index if first time invoking search
-      // Means we don't load json unless searches are going to happen; keep user payload small unless needed
-      if(firstRun) {
-        loadSearch(); // loads our json data and builds fuse.js search index
-        firstRun = false; // let's never do this again
-      }
-
-      // Toggle visibility of search box
-      if (!searchVisible) {
-        document.getElementById("fastSearch").style.visibility = "visible"; // show search box
-        document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
-        searchVisible = true; // search visible
-      }
-      else {
-        document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
-        document.activeElement.blur(); // remove focus from search box 
-        searchVisible = false; // search not visible
-      }
+    openSearch();
   }
 
   // Allow ESC (27) to close search box
@@ -143,3 +126,44 @@ function executeSearch(term) {
     last = list.lastChild.firstElementChild; // last result container — used for checking against keyboard up/down location
   }
 }
+
+
+function openSearch() {
+  // Load json search index if first time invoking search
+  // Means we don't load json unless searches are going to happen; keep user payload small unless needed
+  if(firstRun) {
+    loadSearch(); // loads our json data and builds fuse.js search index
+    firstRun = false; // let's never do this again
+  }
+
+  // Toggle visibility of search box
+  if (!searchVisible) {
+    document.getElementById("fastSearch").style.visibility = "visible"; // show search box
+    document.getElementById("searchInput").focus(); // put focus in input box so you can just start typing
+    searchVisible = true; // search visible
+  }
+  else {
+    document.getElementById("fastSearch").style.visibility = "hidden"; // hide search box
+    document.activeElement.blur(); // remove focus from search box 
+    searchVisible = false; // search not visible
+  }
+}
+
+function closeSearch() {
+  openSearch();
+}
+
+document.getElementById("SearchButton").addEventListener("click", function(e){
+  e.stopPropagation();
+  openSearch();
+});
+
+document.getElementById("fastSearch").addEventListener("click", function(e){
+  e.stopPropagation();
+});
+
+document.addEventListener("click", function(){
+  if (searchVisible) {
+    closeSearch();
+  }
+});
