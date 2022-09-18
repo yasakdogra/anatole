@@ -93,6 +93,7 @@ function loadSearch() {
         'title',
         'permalink',
         'summary',
+        'categories',
         'tags',
         'toc'
         ]
