@@ -3,7 +3,7 @@
 
 
 <span>
-  {{- range $index, $el := .items -}}
+  {{- range $index, $el := sort .items -}}
     <!-- Replace certain special characters with their URL encoded counterparts -->
     {{- $item := replace . "#" "%23" -}}
     {{- $item = replace $item "." "%2e" -}}
