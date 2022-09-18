@@ -129,7 +129,7 @@ function executeSearch(term) {
 }
 
 
-function openSearch() {
+function toggleSearch() {
   // Load json search index if first time invoking search
   // Means we don't load json unless searches are going to happen; keep user payload small unless needed
   if(firstRun) {
@@ -150,8 +150,17 @@ function openSearch() {
   }
 }
 
+
+function openSearch() {
+  if(!searchVisible) {
+    toggleSearch();
+  }
+}
+
 function closeSearch() {
-  openSearch();
+  if(searchVisible) {
+    toggleSearch();
+  }
 }
 
 document.getElementById("SearchButton").addEventListener("click", function(e){
@@ -164,7 +173,5 @@ document.getElementById("fastSearch").addEventListener("click", function(e){
 });
 
 document.addEventListener("click", function(){
-  if (searchVisible) {
     closeSearch();
-  }
 });
