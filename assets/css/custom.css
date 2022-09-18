@@ -110,6 +110,14 @@ body{
     min-width: 22vw;
 }
 
+.theme--light #searchResults {
+    background-color: #fff;
+}
+
+.theme--dark #searchResults {
+    background-color: #152028;
+}
+
 #searchResults li {
     list-style: none;
     background-color: #ebebeb;
