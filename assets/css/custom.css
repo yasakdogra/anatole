@@ -1,3 +1,7 @@
+* {
+    overflow-wrap: break-word;
+}
+
 aside.wrapper__sidebar {
     display: none;
 }
