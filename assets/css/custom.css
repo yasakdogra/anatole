@@ -152,3 +152,8 @@ body{
 .theme--dark #searchResults a:hover, a:focus {
     background-color: #324c5d;
 }
+
+#comment>h2 {
+    font-size: 2rem;
+    margin-top: 60px;
+}
