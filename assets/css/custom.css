@@ -145,11 +145,13 @@ body{
     background-color: #20313c;
 }
 
-#searchResults a:hover, a:focus { 
+#searchResults a:hover,
+#searchResults a:focus { 
     outline: 0; background-color: #9f9f9f; color: #fff; 
 }
 
-.theme--dark #searchResults a:hover, a:focus {
+.theme--dark #searchResults a:hover,
+.theme--dark #searchResults a:focus {
     background-color: #324c5d;
 }
 
