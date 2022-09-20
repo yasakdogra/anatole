@@ -157,3 +157,15 @@ body{
     font-size: 2rem;
     margin-top: 60px;
 }
+
+.photolist {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+}
+
+.photolist figure {
+    flex: 1 1 19em;
+    padding: 1%;
+    max-width: 60rem;
+}
