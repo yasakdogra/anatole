@@ -25,6 +25,10 @@ body{
     margin-top: 50px;
 }
 
+ul.terms-tags {
+    margin-top: 40px;
+}
+
 .terms-tags li {
     display: inline-block;
     margin: 10px;
